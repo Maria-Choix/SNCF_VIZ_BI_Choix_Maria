@@ -34,6 +34,11 @@ LIBELLES_TYPES = {
     "pk_fin_r": "Repère kilométrique de fin du tronçon.",
 }
 
+LIBELLES_VOIES = {
+    "VPL": "Voie principale de ligne",
+    "VPA": "Voie principale autre",
+    "VS": "Voie de service" }
+
 
 couleurs_hex = {
     # Neutres
@@ -397,7 +402,7 @@ with tab_dashboard:
 
 
 with tab_carte:
-    carte.afficher(df, extraire_paths, COULEURS_HEX, couleurs_hex, LIBELLES_TYPES)
+    carte.afficher(df, extraire_paths, COULEURS_HEX, couleurs_hex, LIBELLES_VOIES)
 
 
 with tab_horaires:

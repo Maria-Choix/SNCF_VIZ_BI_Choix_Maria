@@ -2,13 +2,12 @@
 
 Application Streamlit pour explorer le réseau ferré français : voies, longueurs et temps de parcours.
 
-@author : Maria Choix
+Auteure : @user.name("https://github.com/mariachoice")
 
 !!!!A AJOUTER
 - insights faire
 - dataset de contexte, manque de performance
 
-- Les 10 relations avec le PIRE ratio rapidité / distance (à vol d'oiseau) CEST FAIT OK 
 
 ## Axes d'étude
 
