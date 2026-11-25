@@ -360,7 +360,7 @@ COULEURS_HEX = {
 
 with st.sidebar:
     st.image("emoticon.png", width=120)
-    st.markdown("##  Le réseau ferré national")
+    st.markdown("##  Le réseau ferré national : Analyse des tronçons et Temps de parcours")
     st.markdown("---")
 
     st.markdown("### À propos")

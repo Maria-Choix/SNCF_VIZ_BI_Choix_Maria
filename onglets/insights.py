@@ -65,7 +65,7 @@ def afficher(df, df2, COL_DISTANCE, nb_brut_horaires, ACCENT):
 
     # Insight 1
     st.markdown("#### 1. Le progrès vient par paliers")
-    st.markdown(
+    st.caption(
         f"Sur les {len(rel_depart)} relations suivies depuis {a_min}, la vitesse moyenne passe de "
         f"{v0:.0f} à {v1:.0f} km/h, avec des sauts nets plutôt qu'une progression régulière."
     )
@@ -92,6 +92,7 @@ def afficher(df, df2, COL_DISTANCE, nb_brut_horaires, ACCENT):
     )
 
     # Insight 3
+    best, worst = g["gain_pct"].idxmax(), g["gain_pct"].idxmin()
     st.markdown("#### 3. Des gains très inégaux")
     st.caption(f"**{best}** a gagné {g.loc[best, 'gain_pct']:.0f} % de temps, "
                 f"alors que **{worst}** n'a gagné que {g.loc[worst, 'gain_pct']:.0f} %.")
@@ -105,7 +106,7 @@ def afficher(df, df2, COL_DISTANCE, nb_brut_horaires, ACCENT):
     fig2.update_layout(height=380, margin=dict(l=10, r=40, t=20, b=10),
                        xaxis_title="Gain de temps depuis la première observation (%)", yaxis_title="")
     st.plotly_chart(fig2, use_container_width=True, theme=None)
-    best, worst = g["gain_pct"].idxmax(), g["gain_pct"].idxmin()
+    
     
     # Insigt 4
     st.markdown("#### 4. Des relations à la traîne")
@@ -130,8 +131,9 @@ def afficher(df, df2, COL_DISTANCE, nb_brut_horaires, ACCENT):
     )
 
 
-    st.info(
-        "### Recommandations (pistes d'attention)\n\n"
+    st.markdown(
+        "### Recommandations (pistes d'attention)")
+    st.markdown(
         "1. Cibler en priorité les liaisons transversales et les relations les plus lentes.\n"
         "2. Privilégier l'investissement en infrastructure plutôt que l'optimisation des horaires.\n"
         "3. Suivre les relations sans amélioration depuis plus de 10 ans."
